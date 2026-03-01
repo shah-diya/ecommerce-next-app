@@ -7,9 +7,12 @@ export default function CartPage() {
   const { cart, removeFromCart, increaseQty, decreaseQty } = useCart();
   const router = useRouter();
 
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalItems = cart.reduce<number>(
+    (sum, item) => sum + item.quantity,
+    0
+  );
 
-  const totalPrice = cart.reduce(
+  const totalPrice = cart.reduce<number>(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
@@ -20,7 +23,6 @@ export default function CartPage() {
 
       <div className="row">
 
-        {/* LEFT SIDE */}
         <div className="col-lg-8">
           {cart.length === 0 ? (
             <div className="alert alert-info">
@@ -86,7 +88,6 @@ export default function CartPage() {
           )}
         </div>
 
-        {/* RIGHT SIDE */}
         <div className="col-lg-4">
           <div className="border rounded-4 p-4 bg-white shadow-sm">
             <h4 className="mb-3 fw-semibold">

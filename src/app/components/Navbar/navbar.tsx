@@ -7,7 +7,7 @@ import { useCart } from "../../context/CartContext";
 export default function Navbar() {
   const { cart } = useCart();
 
-  const cartCount = cart.reduce(
+  const cartCount = cart.reduce<number>(
     (sum, item) => sum + item.quantity,
     0
   );
@@ -17,13 +17,6 @@ export default function Navbar() {
 
       {/* Logo */}
       <Link className="navbar-brand d-flex align-items-center" href="/">
-        {/* <Image
-          src="/logo.png"
-          alt=" Logo"
-          width={40}
-          height={40}
-          className="me-2"
-        /> */}
         ShopZone
       </Link>
 
@@ -46,12 +39,10 @@ export default function Navbar() {
             <Link className="nav-link" href="/contact">Contact Us</Link>
           </li>
 
-          {/* 🛒 Cart Icon With Badge */}
+          {/* Cart */}
           <li className="nav-item ms-4 position-relative">
-
             <Link href="/cart" className="position-relative d-inline-block">
 
-              {/* Cart Image */}
               <Image
                 src="/cart.jpeg"
                 alt="Cart"
@@ -59,8 +50,7 @@ export default function Navbar() {
                 height={35}
               />
 
-              {/* Badge */}
-              {cartCount >= 0 && (
+              {cartCount > 0 && (
                 <span
                   className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
                   style={{
@@ -73,7 +63,6 @@ export default function Navbar() {
               )}
 
             </Link>
-
           </li>
 
         </ul>
