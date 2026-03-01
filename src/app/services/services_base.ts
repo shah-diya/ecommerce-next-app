@@ -1,4 +1,4 @@
-const BASE_URL = "https://fakestoreapi.com";
+const BASE_URL = "https://dummyjson.com";
 
 export async function fetchAPI(endpoint: string, options?: RequestInit) {
   try {
@@ -12,7 +12,9 @@ export async function fetchAPI(endpoint: string, options?: RequestInit) {
       return [];
     }
 
-    return res.json();
+    const data = await res.json();
+    return data.products ?? data;
+
   } catch (error) {
     console.error("Fetch failed:", error);
     return [];
