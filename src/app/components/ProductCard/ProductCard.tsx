@@ -4,7 +4,7 @@ interface Product {
   id: number;
   title: string;
   price: number;
-  image: string;
+  thumbnail: string;
 }
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -15,7 +15,7 @@ export default function ProductCard({ product }: { product: Product }) {
         {/* Image Section */}
         <div className="product-image-wrapper">
           <img
-            src={product.image}
+            src={product.thumbnail}
             alt={product.title}
             className="product-image"
           />

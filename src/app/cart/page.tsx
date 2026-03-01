@@ -38,7 +38,7 @@ export default function CartPage() {
 
                   <div className="d-flex align-items-center">
                     <img
-                      src={item.image}
+                      src={item.thumbnail}
                       alt={item.title}
                       width={100}
                       style={{ objectFit: "contain" }}

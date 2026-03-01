@@ -7,7 +7,7 @@ interface Product {
   id: number;
   title: string;
   price: number;
-  image: string;
+  thumbnail: string;
 }
 
 export default function AddToCartButton({ product }: { product: Product }) {

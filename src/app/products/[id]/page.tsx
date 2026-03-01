@@ -24,7 +24,7 @@ export default async function ProductDetail(
           <div className="col-12 col-md-6">
             <div className="bg-light rounded-4 d-flex justify-content-center align-items-center p-3 p-md-5">
               <img
-                src={product.image}
+                src={product.thumbnail}
                 alt={product.title}
                 className="img-fluid"
                 style={{ maxHeight: "350px", objectFit: "contain" }}
@@ -60,7 +60,7 @@ export default async function ProductDetail(
                   id: product.id,
                   title: product.title,
                   price: product.price,
-                  image: product.image,
+                  thumbnail: product.thumbnail,
                 }}
               />
             </div>
